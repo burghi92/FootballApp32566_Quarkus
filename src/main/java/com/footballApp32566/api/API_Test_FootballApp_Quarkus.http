@@ -1,0 +1,37 @@
+### Hinzufügen eines neuen Matches
+POST http://localhost:8080/quarkus/api/matches
+Content-Type: application/json
+
+{
+  "team1": "Vfb Stuttgart",
+  "team1Goals": 2,
+  "team2": "Vfl Bochum",
+  "team2Goals": 0
+}
+
+### Hinzufügen einer Liste neuer Matches
+POST http://localhost:8080/quarkus/api/matches/matchday
+Content-Type: application/json
+
+[
+  {
+    "team1": "Vfl Brochenzell",
+    "team1Goals": 2,
+    "team2": "FC Bayern München",
+    "team2Goals": 0
+  },
+  {
+    "team1": "Vfl Bochum",
+    "team1Goals": 2,
+    "team2": "Schweinfurt",
+    "team2Goals": 1
+  }
+]
+
+### Löschen eines Matches anhand seiner ID
+DELETE http://localhost:8080/quarkus/api/matches/2
+
+### Aktualisieren eines bestehenden Matches
+PUT http://localhost:8080/quarkus/api/matches/1?teamGoals1=0&teamGoals2=1
+
+
